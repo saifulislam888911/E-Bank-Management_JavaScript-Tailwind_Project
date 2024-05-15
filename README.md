@@ -1,8 +1,8 @@
-# E-Bank-Management_JavaScript-Tailwind_Project 
+# E-Bank-Transaction_JavaScript-Tailwind_small-Project
 Summary : Html5, Tailwind, JavaScript. 
 
 
-# Project : E-Bank-Management-System 
+# Project : E-Bank-Transaction-System 
 
 
 Helped From : Programming Hero Online-Class, Self-Practice, Self-Study. 
