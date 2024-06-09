@@ -1,39 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>E-Bank</title>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
+    <!-- .......... Logo : Window Tab .......... -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjGSV5xaQGk6rBdYEL2fkRXFO6sxDo4iMCx9WtEtLGwfT1jVTQDyiEKakIGAspJDYOT2o&usqp=CAU"
+    />
 
-<body>
+    <!-- .......... JavaScript Files : Online Link .......... -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body>
     <header>
-        <h1 class="text-5xl text-center mt-6">Welcome to 
-            <span class="font-semibold text-violet-600">
-                E-Bank
-            </span>
-        </h1>
+      <h1 class="text-5xl text-center mt-6">
+        Welcome to
+        <span class="font-semibold text-violet-600"> E-Bank </span>
+      </h1>
     </header>
 
-
-
     <main>
-        <section class="bg-blue-100 w-9/12 rounded-lg mx-auto mt-12 p-8">
-            <h3 class="text-3xl font-medium mb-4">Please Login</h3>
+      <section
+        class="text-center bg-blue-100 w-[40%] rounded-lg mt-12 mx-auto p-8"
+      >
+        <!-- ..........
+          Division : Login
+        .......... -->
+        <div id="div-login" style="display: block">
+          <h3 class="text-3xl font-medium mb-6">Please Login</h3>
 
-            <div>
-                <input  type="email" name="" id="user-email" class="block rounded-md w-9/12 mb-2 px-3" placeholder="Email">
-                <input  type="password" name="" id="user-password" class="block rounded-md w-9/12 mb-2 px-3" placeholder="Password">
+          <div class="mb-3">
+            <input
+              type="email"
+              name=""
+              id="user-email"
+              class="block rounded-md w-6/12 mx-auto py-3 px-2"
+              placeholder="Email"
+            />
 
-                <button id="btn-login" class="font-semibold text-white bg-amber-600 hover:bg-sky-700 rounded-lg px-8 py-2">Login</button>             
-            </div>
-        </section>
+            <span
+              id="vMsg_email"
+              class="text-xs text-red-400"
+              style="visibility: hidden"
+            >
+              Enter Email Address.
+            </span>
+          </div>
+
+          <div class="mb-3">
+            <input
+              type="password"
+              name=""
+              id="user-password"
+              class="block rounded-md w-6/12 mx-auto py-3 px-2"
+              placeholder="Password"
+            />
+
+            <span
+              id="vMsg_password"
+              class="text-xs text-red-400"
+              style="visibility: hidden"
+            >
+              Enter Password.
+            </span>
+          </div>
+
+          <div>
+            <button
+              id="btn-login"
+              class="font-semibold text-white bg-amber-600 hover:bg-sky-700 rounded-lg px-8 py-2"
+            >
+              Login
+            </button>
+          </div>
+        </div>
+
+        <!-- ..........
+          Division : Signup
+        .......... -->
+        <div id="div-signup" style="display: none">
+          <h3 class="text-3xl font-medium mb-6">Please Signup</h3>
+
+          <div class="mb-3">
+            <input
+              type="text"
+              name=""
+              id="user-name-new"
+              class="block rounded-md w-6/12 mx-auto py-3 px-2"
+              placeholder="Name"
+            />
+
+            <span
+              id="vMsg_user-name-new"
+              class="text-xs text-red-400"
+              style="visibility: hidden"
+            >
+              Enter Full Name.
+            </span>
+          </div>
+
+          <div class="mb-3">
+            <input
+              type="email"
+              name=""
+              id="user-email-new"
+              class="block rounded-md w-6/12 mx-auto py-3 px-2"
+              placeholder="Email"
+            />
+
+            <span
+              id="vMsg_email-new"
+              class="text-xs text-red-400"
+              style="visibility: hidden"
+            >
+              Enter Email Address.
+            </span>
+          </div>
+
+          <div class="mb-3">
+            <input
+              type="password"
+              name=""
+              id="user-password-new"
+              class="block rounded-md w-6/12 mx-auto py-3 px-2"
+              placeholder="Password"
+            />
+
+            <span
+              id="vMsg_password-new"
+              class="text-xs text-red-400 text-start"
+              style="visibility: hidden"
+            >
+              Enter Password.
+            </span>
+          </div>
+
+          <div class="mb-3">
+            <input
+              type="text"
+              name=""
+              id="user-phone"
+              class="block rounded-md w-6/12 mx-auto py-3 px-2"
+              placeholder="Contact No."
+            />
+
+            <span
+              id="vMsg_phone-number"
+              class="text-xs text-red-400"
+              style="visibility: hidden"
+            >
+              Enter Phone Number.
+            </span>
+          </div>
+
+          <div>
+            <button
+              id="btn-signup"
+              class="font-semibold text-white bg-amber-600 hover:bg-sky-700 rounded-lg px-8 py-2"
+            >
+              Signup
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ..........
+          Section : Signup and Login : Display and Visibility
+      .......... -->
+      <section
+        class="text-center bg-gray-50 w-[40%] rounded-lg mt-1 mx-auto p-2"
+      >
+        <!-- to go for Signup -->
+        <div id="req-signup-display" class="opacity-30" style="display: block">
+          <p class="inline">are you a</p>
+
+          <button
+            onclick="displaySignupForm()"
+            class="font-semibold hover:text-green-700"
+          >
+            <u>New User</u>
+          </button>
+
+          <p class="inline">?</p>
+        </div>
+
+        <!-- to go for Login -->
+        <div id="req-login-display" class="opacity-30" style="display: none">
+          <p class="inline">want to</p>
+
+          <button
+            onclick="displayLoginForm()"
+            class="font-semibold hover:text-green-700"
+          >
+            <u>Login</u>
+          </button>
+
+          <p class="inline">?</p>
+        </div>
+      </section>
+
+      <section
+        id="dflt-email-pass-vis"
+        class="bg-green-200 opacity-30 w-[40%] rounded-lg mt-5 mx-auto p-8"
+        style="visibility: visible"
+      >
+        <div class="text-center">
+          <p>Email : admin</p>
+          <p>Password : admin</p>
+        </div>
+      </section>
     </main>
 
-
-
+    <!-- .......... JavaScript Files : Mine .......... -->
+    <script src="./js/utilities.js"></script>
+    <script src="js/index_display_visibility.js"></script>
     <script src="js/login.js"></script>
-</body>
+    <script src="js/signup.js"></script>
+  </body>
 </html>

@@ -1,28 +1,47 @@
-console.log('JS File : login.js');
+console.log("JS File : login.js");
 
+/* ..........
+    Function : Login
+.......... */
+document.getElementById("btn-login").addEventListener("click", function () {
+  //console.log('Login Button Clicked');
 
+  const emailField = document.getElementById("user-email");
+  const email = emailField.value;
 
-document.getElementById('btn-login').addEventListener('click', function(){
-    //console.log('Login Button Clicked');
+  const passwordField = document.getElementById("user-password");
+  const password = passwordField.value;
 
-    const emailField = document.getElementById('user-email');
-    const email = emailField.value;
+  //console.log(email, password);
 
-    const passwordField = document.getElementById('user-password');
-    const password = passwordField.value;
+  /* .......... Validation : Login .......... */
+  if (email == "admin" && password == "admin") {
+    vMg_LoginField_Hidden();
 
-    console.log(emailField, passwordField);
-    console.log(email, password);
+    alert("Login Successful.");
 
+    window.location.href = "user_Profile.html";
+  } else {
+    if (email == null || email == "" || email == undefined) {
+      visibilityTypeVisible("vMsg_email");
 
+      visibilityTypeHidden("vMsg_password");
+    } else if (password == null || password == "" || password == undefined) {
+      visibilityTypeVisible("vMsg_password");
 
-    if((email == null || email == "" || email == undefined) || (password == null || password == "" || password == undefined))
-    {
-      alert("Incorrect Email or Password.") 
+      visibilityTypeHidden("vMsg_email");
+    } else {
+      vMg_LoginField_Hidden();
+
+      alert("Incorrect Email or Password.");
     }
-    else{
-      alert("Log in Successful.")
+  }
+});
 
-      window.location.href = 'user_Profile.html';
-    }
-})
+/* ..........
+    Function : Login Field Validation Message Hidden
+.......... */
+function vMg_LoginField_Hidden() {
+  visibilityTypeHidden("vMsg_email");
+  visibilityTypeHidden("vMsg_password");
+}

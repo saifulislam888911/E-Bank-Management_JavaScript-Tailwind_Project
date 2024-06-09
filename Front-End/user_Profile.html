@@ -1,92 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>E-Bank : Home</title>
+
+    <!-- .......... Logo : Window Tab .......... -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjGSV5xaQGk6rBdYEL2fkRXFO6sxDo4iMCx9WtEtLGwfT1jVTQDyiEKakIGAspJDYOT2o&usqp=CAU"
+    />
 
     <!-- .......... JavaScript Files : Online Link .......... -->
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <header class="mb-12">
-        <h1 class="text-5xl text-center mt-6">
-            Let's
-            <span class="font-semibold text-violet-600">
-                Explore
-            </span>
-            !
-        </h1>
+      <h1 class="text-5xl text-center mt-6">
+        Let's
+        <span class="font-semibold text-violet-600"> Explore </span>
+        !
+      </h1>
     </header>
 
-
-
     <main class="bg-sky-50 w-11/12 rounded-lg mx-auto p-5">
-        
-        <!-- .......... 
+      <!-- .......... 
             Section 1 : Dashboard 
         .......... -->
-        <section>
-            <div class="grid grid-cols-3 gap-4 text-white w-9/12 mx-auto">
-                <div class="bg-green-400 rounded-xl p-5">
-                    <h4 class="text-3xl">Deposit</h4>
-                    <h2 class="text-5xl">
-                        $
-                        <span id="total-deposit">
-                            0.00
-                        </span>
-                    </h2>
-                </div>
+      <section>
+        <div class="grid grid-cols-3 gap-4 text-white w-9/12 mx-auto">
+          <div class="bg-green-400 rounded-xl p-5">
+            <h4 class="text-3xl">Deposit</h4>
+            <h2 class="text-5xl">
+              $
+              <span id="total-deposit"> 0.00 </span>
+            </h2>
+          </div>
 
-                <div class="bg-red-400 rounded-xl p-5">
-                    <h4 class="text-3xl">Withdraw</h4>
-                    <h2 class="text-5xl">
-                        $ -
-                        <span id="total-withdraw">
-                            0.00
-                        </span>
-                    </h2>
-                </div>
+          <div class="bg-red-400 rounded-xl p-5">
+            <h4 class="text-3xl">Withdraw</h4>
+            <h2 class="text-5xl">
+              $ -
+              <span id="total-withdraw"> 0.00 </span>
+            </h2>
+          </div>
 
-                <div class="bg-blue-400 rounded-xl p-5">
-                    <h4 class="text-3xl">Balance</h4>
-                    <h2 class="text-5xl">
-                        $
-                        <span id="total-amount">
-                            0.00
-                        </span>
-                    </h2>
-                </div>    
-            </div>         
-        </section>
+          <div class="bg-blue-400 rounded-xl p-5">
+            <h4 class="text-3xl">Balance</h4>
+            <h2 class="text-5xl">
+              $
+              <span id="total-amount"> 0.00 </span>
+            </h2>
+          </div>
+        </div>
+      </section>
 
-
-
-        <!-- .......... 
+      <!-- .......... 
             Section 2 : Calculation (Deposit & Withdraw) 
         .......... -->
-        <section class="mt-16">
-            <div class="grid grid-cols-2 gap-6 w-9/12 mx-auto">
-                <div class="bg-green-200 rounded-lg p-5">
-                    <h4 class="font-semibold text-3xl mb-4">Please Deposit</h4>
-                    <input type="text" name="" id="field-deposit" class="block rounded-md w-9/12 px-3 py-2 mb-4" placeholder="$ amount want to Deposit.">
+      <section class="mt-16">
+        <div class="grid grid-cols-2 gap-6 w-9/12 mx-auto">
+          <div class="bg-green-200 rounded-lg p-5">
+            <h4 class="font-semibold text-3xl mb-4">Please Deposit</h4>
+            <input
+              type="text"
+              name=""
+              id="field-deposit"
+              class="block rounded-md w-9/12 px-3 py-2 mb-4"
+              placeholder="$ amount want to Deposit."
+            />
 
-                    <button id="btn-deposit" class="font-semibold text-white bg-green-500 hover:bg-green-700 rounded-lg px-3 py-2">Deposit</button>
-                </div>
+            <button
+              id="btn-deposit"
+              class="font-semibold text-white bg-green-500 hover:bg-green-700 rounded-lg px-3 py-2"
+            >
+              Deposit
+            </button>
+          </div>
 
-                <div class="bg-red-200 rounded-lg p-5">
-                    <h4 class="font-semibold text-3xl mb-4">Please Withdraw</h4>
-                    <input type="text" name="" id="field-withdraw" class="block rounded-md w-9/12 px-3 py-2 mb-4" placeholder="$ amount want to Withdraw.">
+          <div class="bg-red-200 rounded-lg p-5">
+            <h4 class="font-semibold text-3xl mb-4">Please Withdraw</h4>
+            <input
+              type="text"
+              name=""
+              id="field-withdraw"
+              class="block rounded-md w-9/12 px-3 py-2 mb-4"
+              placeholder="$ amount want to Withdraw."
+            />
 
-                    <button id="btn-withdraw" class="font-semibold text-white bg-red-500 hover:bg-red-700 rounded-lg px-3 py-2">Withdraw</button>
-                </div>
-            </div>
-        </section>
+            <button
+              id="btn-withdraw"
+              class="font-semibold text-white bg-red-500 hover:bg-red-700 rounded-lg px-3 py-2"
+            >
+              Withdraw
+            </button>
+          </div>
+        </div>
+      </section>
     </main>
 
-
+    <footer>
+      <section class="text-center mt-6">
+        <button
+          id="btn-logout"
+          class="font-bold text-xl text-white bg-red-700 hover:bg-red-400 rounded-lg px-8 py-5"
+        >
+          Logout
+        </button>
+      </section>
+    </footer>
 
     <!-- .......... JavaScript Files : Programming Hero .......... -->
     <script src="js/utilities.js"></script>
@@ -95,5 +120,6 @@
 
     <!-- .......... JavaScript Files : Mine .......... -->
     <!-- <script src="js/calculation_Mine.js"></script> -->
-</body>
+    <script src="js/logout.js"></script>
+  </body>
 </html>
